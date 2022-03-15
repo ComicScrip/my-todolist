@@ -11,6 +11,10 @@ newTaskForm.addEventListener('submit', (e) => {
   const line = document.createElement('tr');
   const titleElement = document.createElement('td');
   titleElement.innerHTML = newTaskName;
+  titleElement.addEventListener('click', () => {
+    titleElement.classList.toggle('done');
+  });
+
   line.appendChild(titleElement);
   tasksTable.appendChild(line);
   newTaskInput.value = '';
